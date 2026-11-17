@@ -16,7 +16,7 @@
     its containers show Rspress's default colors, not Carbon's.
 - [x] `--font-sans` / `--font-mono` renamed to `--logue-font-sans` / `--logue-font-mono`
 - [x] Rspress plugin `pluginFullerene()` with prebuilt `dist/style.css`
-- [x] `fullerene/style.css` export
+- [x] `@buckminsterfullerene/rspress/style.css` export
 - [x] UMD build removed (the package is a Node-side Rspress plugin plus a CSS file)
 - [x] Docs site uses the theme from source; Playground shows typography and tokens
 - [ ] Decide the package and repository name, then set `"private": false`

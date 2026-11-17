@@ -199,8 +199,8 @@ define.doc({
   // Directory settings
   root: 'src-docs',
   outDir: 'docs',
-  // If the package name and repository name are different, correct them as needed.
-  base: `/${packageJson.name.slice(packageJson.name.lastIndexOf('/') + 1)}/`,
+  // The package name (@buckminsterfullerene/rspress) differs from the repository name.
+  base: '/fullerene/',
   route: { exclude: ['components/**'] },
   themeConfig: {
     socialLinks: [

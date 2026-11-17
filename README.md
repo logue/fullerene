@@ -1,4 +1,4 @@
-# fullerene
+# @buckminsterfullerene/rspress
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-7-%230074c1.svg)](http://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-12-pink.svg)](https://pnpm.io/)
@@ -7,17 +7,17 @@
 Fullerene is Logue's theme for [Rspress](https://rspress.rs/): a design based on [IBM Carbon](https://carbondesignsystem.com/).
 This is not an official Carbon theme.
 
-The name comes from the fullerene molecule: made of carbon, with a structure of its own.
+The name comes from buckminsterfullerene (C60): a molecule made of carbon, with a structure of its own. It is named after Buckminster Fuller, the designer of the geodesic dome.
 
 ## Usage
 
 ```bash
-pnpm add -D fullerene
+pnpm add -D @buckminsterfullerene/rspress
 ```
 
 ```ts
 import { defineConfig } from '@rspress/core';
-import { pluginFullerene } from 'fullerene';
+import { pluginFullerene } from '@buckminsterfullerene/rspress';
 
 export default defineConfig({
   plugins: [pluginFullerene()]
@@ -25,7 +25,7 @@ export default defineConfig({
 ```
 
 The plugin registers a prebuilt, plain CSS stylesheet. Consumers need neither Sass nor
-`@carbon/styles`. The stylesheet is also available as `fullerene/style.css`.
+`@carbon/styles`. The stylesheet is also available as `@buckminsterfullerene/rspress/style.css`.
 
 ## What the theme contains
 

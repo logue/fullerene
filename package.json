@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "fullerene",
+  "name": "@buckminsterfullerene/rspress",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Fullerene: Logue's Rspress theme, a design based on IBM Carbon.",
   "keywords": [
     "rspress",
@@ -96,5 +96,8 @@
   "engines": {
     "node": ">=22",
     "pnpm": ">=12.19"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

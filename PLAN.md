@@ -4,7 +4,7 @@
 
 ## 1. 🧾 Meta
 
-- Project: `fullerene` (npm, unscoped)
+- Project: `@buckminsterfullerene/rspress` (repository: `logue/fullerene`)
 - Owner: Logue
 - Updated: 2026-11-18
 - Status: `Draft`
@@ -29,8 +29,15 @@
 
 ## 3. ✅ Decision
 
-- Name: `fullerene` (unscoped on npm). A fullerene is made of carbon but has its own
-  structure, like this theme and Carbon. It pairs with annealer's material-science naming.
+- Name: npm scope `@buckminsterfullerene`, this package `@buckminsterfullerene/rspress`.
+  Buckminsterfullerene (C60) is one specific structure made of carbon, like this design and
+  Carbon; it is named after Buckminster Fuller, a designer. `@fullerene` is taken on npm
+  (another author's UI library, 2022). The brand name in prose stays "Fullerene".
+- Planned packages in the scope: `rspress` (this one), `codemirror` (CodeMirror theme),
+  a theme for Universal Markdown output (not named `umd`, which reads as Universal Module
+  Definition on npm), `tauri` (native integration: window chrome, OS dark mode). Extract a
+  shared core (the `_carbon.scss` layer) when the second package is made.
+- Scoped packages are restricted by default on npm; `publishConfig.access` is `public`.
 - Keep Carbon's token names and prefix (`--cds-*`). A separate naming system would need a
   mapping table to maintain, and Carbon's own Web Components read the same tokens.
 - Logue's own additions use `--logue-*`, so they never collide with future Carbon tokens.
