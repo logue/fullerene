@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  background: var(--cds-background);
+  color: var(--cds-text-primary);
+  font-family: var(--logue-font-sans), sans-serif;
+}
+
+code {
+  font-family: var(--logue-font-mono), var(--logue-font-sans), monospace;
+}
+
+.demo {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.tokens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.swatch {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  border: 1px solid var(--cds-border-subtle-01);
+}

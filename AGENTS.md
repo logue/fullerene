@@ -14,7 +14,7 @@ This project uses Rstack CLI as its JS toolchain:
 - **Language**: TypeScript 7
 - **Package manager**: pnpm (do not use npm or yarn)
 
-**Last updated**: 2026-11-17
+**Last updated**: 2026-11-18
 **Verified with**: `package.json` in this repository
 
 ### Tool Versions
@@ -51,7 +51,7 @@ When you open the project in VS Code, you'll be prompted to install recommended 
 This project uses the Rstack CLI as a unified interface for the library,
 demo, tests, and linting:
 
-- **Rslib** - Builds the library for distribution (ESM and UMD)
+- **Rslib** - Builds the Rspress plugin (ESM) and the theme stylesheet (`dist/style.css`)
   - Command: `pnpm run build`
   - Output: `dist/` (published to npm)
 - **Rsbuild** - Builds the demo (Playground).
@@ -150,6 +150,15 @@ Its source root is `src-docs/` and its generated output is `docs/`; keep these
 paths aligned with the Rspress config and the package scripts. When updating the
 documentation site, follow `.agents/skills/rspress-docs-generator/SKILL.md` and
 validate changes with `pnpm run build:docs`.
+
+### Theme Source
+
+- `src/styles/_carbon.scss` — Carbon configuration, fonts, type styles and `--cds-*` tokens.
+  Load individual Carbon modules (`@carbon/styles/scss/*`), never the `@carbon/styles`
+  entry: the entry also emits all Carbon component CSS.
+- `src/styles/_rspress.scss` — `--cds-*` → Rspress `--rp-*` mapping and Rspress fixes.
+- Logue's own tokens use the `--logue-*` prefix. Do not add custom tokens under `--cds-*`.
+- Rspress dark mode is the `rp-dark` class on `<html>`.
 
 ### Directory Structure & File Organization
 

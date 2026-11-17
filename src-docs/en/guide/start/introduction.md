@@ -1,19 +1,27 @@
 ---
-description: Introduction to Rspress features, including build performance, AI-native output, MDX, and extensibility.
+description: What the Logue Rspress theme is, what it contains, and how its CSS is organized.
 ---
 
 # Introduction
 
-Rspress is a static site generator based on [Rsbuild](https://rsbuild.rs/), rendered with the React framework. It comes with a default documentation theme, and you can quickly build a documentation site with Rspress.
+Fullerene is Logue's theme for [Rspress](https://rspress.rs/), a design based on [IBM Carbon](https://carbondesignsystem.com/). It is not an official Carbon theme.
 
-## Why Rspress
+## What the theme contains
 
-- **Build Performance**. The core compilation module is based on the Rust front-end toolchain, providing millisecond-level startup and a more ultimate development experience.
-- **AI-native**. Technical documentation not only serves human readers but can also be better understood and utilized by AI through SSG-MD.
-- **MDX Support**. MDX is a powerful way to write content, allowing you to use React components in Markdown.
-- **Basic Capabilities**. Including full-text search, internationalization, multi-version support, component library documentation, etc.
-- **Extensibility**. Provides a built-in plugin system, supports extending Rspress through plugin API.
+- IBM Plex fonts (Sans, Mono, Sans JP, Sans SC) and Twemoji for emoji.
+- Carbon type styles and type utility classes such as `cds--type-body-01`.
+- The `--cds-*` tokens of Carbon's `white` theme, and of the `g100` theme when Rspress is in dark mode (`html.rp-dark`).
+- A mapping from these tokens to the Rspress CSS variables (`--rp-*`): colors, containers such as `:::tip`, code blocks, and Shiki syntax colors.
 
-## Try Rspress
+The theme loads only these parts of Carbon. It does not include Carbon's component CSS, grid, or reset.
 
-Go to [Getting Started](/guide/start/getting-started) to learn how to use Rspress to build a documentation site.
+## Token naming
+
+- Tokens that come from Carbon keep Carbon's names (`--cds-*`). Carbon's own components, such as `@carbon/web-components`, read the same tokens.
+- Tokens that Logue adds use the `--logue-*` prefix, so they never collide with tokens a later Carbon release may add.
+
+Carbon has renamed tokens between major versions before. The `@carbon/styles` major version is pinned, and a major upgrade needs a check of the token names.
+
+## Web Components
+
+The tokens are set on the `html` element as custom properties. Custom properties inherit into Shadow DOM, so a Web Component on the page can read `var(--cds-text-primary)` and follow the light and dark themes without extra code.

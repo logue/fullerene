@@ -1,105 +1,60 @@
-# Rstack Library starter template
+# fullerene
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-7-%230074c1.svg)](http://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-12-pink.svg)](https://pnpm.io/)
-[![Rstack](https://img.shields.io/badge/rsbuild-0.9.4-orange.svg)](https://rstack.rs/)
-[![X Follow](https://img.shields.io/twitter/follow/logue256?style=plastic)](https://x.com/logue256)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/logue?label=Sponsor&logo=github&color=ea4aaa)](https://github.com/sponsors/logue)
+[![Rstack](https://img.shields.io/badge/rstack-0.9-orange.svg)](https://rstack.rs/)
 
-## Setup
+Fullerene is Logue's theme for [Rspress](https://rspress.rs/): a design based on [IBM Carbon](https://carbondesignsystem.com/).
+This is not an official Carbon theme.
 
-Install the dependencies:
+The name comes from the fullerene molecule: made of carbon, with a structure of its own.
+
+## Usage
+
+```bash
+pnpm add -D fullerene
+```
+
+```ts
+import { defineConfig } from '@rspress/core';
+import { pluginFullerene } from 'fullerene';
+
+export default defineConfig({
+  plugins: [pluginFullerene()]
+});
+```
+
+The plugin registers a prebuilt, plain CSS stylesheet. Consumers need neither Sass nor
+`@carbon/styles`. The stylesheet is also available as `fullerene/style.css`.
+
+## What the theme contains
+
+- IBM Plex fonts (Sans, Mono, Sans JP, Sans SC) and Twemoji
+- Carbon type styles and type utility classes
+- `--cds-*` tokens of Carbon's `white` theme, and `g100` under `html.rp-dark`
+- `--cds-*` → Rspress `--rp-*` variable mapping (colors, containers, code blocks, Shiki)
+
+Only these Carbon modules are loaded; Carbon's component CSS, grid and reset are not.
+Logue's own additions use the `--logue-*` prefix.
+
+## Development
 
 ```bash
 pnpm install
-```
-
-## Get started
-
-Build the library:
-
-```bash
-pnpm run build
-```
-
-Build for the web demo. The output is written to `src-docs/public/demo/` and displayed on the documentation site's Playground page.
-
-```bash
-pnpm run build:demo
-```
-
-Buid for the documentation site.
-
-```bash
-pnpm run build:docs
-```
-
-This command builds the demo before building the documentation site.
-
-Build the library in watch mode:
-
-```bash
-pnpm run dev
-```
-
-Build the documentation in watch mode:
-
-```bash
-pnpm run dev:docs
-```
-
-Run tests:
-
-```bash
+pnpm run build       # dist/index.es.js, dist/index.d.ts, dist/style.css
 pnpm run test
+pnpm run dev:docs    # docs site, using the theme from src/styles
+pnpm run build:docs  # demo + docs site into docs/
+pnpm run lint
 ```
 
-Run tests in watch mode:
+Source layout:
 
-```bash
-pnpm run test:watch
-```
-
-Run build analysis. (Rsdoctor)
-
-```bash
-pnpm run analyze
-```
-
-### TypeScript Configuration
-
-Separate tsconfig files for different purposes:
-
-- `tsconfig.node.json` - Bundler
-- `tsconfig.rslib.json` - Library bundling
-- `tsconfig.rsbuild.json` - Demo
-- `tsconfig.rspress.json` - documentation site
-- `tsconfig.rstest.json` - Testing
-
-## 🔒️ Safety Measures
-
-This template has `"private": true` in `package.json` as a default safety measure.
-
-**Before publishing to npm:**
-
-1. Change `"private": false`
-2. Ensure your package name is unique and correct
-3. Review your `package.json` metadata (description, keywords, repository, etc.)
-
-This prevents accidental npm publishes during development.
-
-## 📝 Checklist
-
-When using this template, follow the checklist to update your info properly.
-
-- [ ] Change the author name in LICENSE
-- [ ] Update package name and metadata in `package.json`
-- [ ] Change `umdName` in `rstack.config.ts`
-- [ ] When outputting a documentation site, if the package name in `rstack.config.ts` differs from the repository name, modify the `base` value in `define.doc` as needed. (By default, the base path is the package name with the `@` namespace removed.)
-- [ ] **Set `"private": false`** (currently `true` as a safety measure)
-- [ ] Review and adapt `AGENTS.md` for your project conventions
-- [ ] Clean up the READMEs
-- [ ] Publish your project.
+- `src/index.ts` — the Rspress plugin
+- `src/styles/_carbon.scss` — Carbon configuration, fonts, type styles, tokens
+- `src/styles/_rspress.scss` — token mapping to Rspress variables, Rspress fixes
+- `src-demo/` — token and typography sheet shown on the Playground page
+- `src-docs/` — documentation site (also a visual test bed for the theme)
 
 ## License
 

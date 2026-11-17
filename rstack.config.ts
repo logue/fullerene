@@ -8,24 +8,6 @@ import path from 'node:path';
 
 import prettierPlugin from 'eslint-config-prettier';
 
-/**
- * The UMD name is used for the global variable name when the library
- * is included via a <script> tag.
- * DO NOT use kebab-case or snake_case for the UMD name.
- * Use camelCase or PascalCase instead.
- *
- * For example, if your library is called "my-library", you might use
- * "MyLibrary" as the UMD name.
- * Then, name might be used in the following way:
- *
- * @example
- * <script src="https://cdn.jsdelivr.net/npm/your-library@1.0.0/dist/index.umd.js"></script>
- * <script>
- *   const myLibrary = window.umdName;
- * </script>
- */
-const umdName = 'RstackLibrary'; // CHANGE THIS to your library's global variable name.
-
 /** Parse package.json content */
 const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8')) as {
   name: string;
@@ -84,6 +66,8 @@ const IGNORE_PATTERNS = [
   '**/dist/**',
   '**/docs/**',
   '**/storybook-static/**',
+  // Demo build embedded in the docs site.
+  '**/src-docs/public/demo/**',
   '**/target/**',
   // Wrangler
   '**/worker-configuration.d.ts',
@@ -137,19 +121,22 @@ define.lib({
       }
     },
     {
-      // Compatibility-only browser build. npm consumers should prefer the ESM entry
-      // above, which is the default package export and the primary distribution target.
-      format: 'umd',
+      // Prebuilt theme stylesheet (`dist/style.css`). Consumers get plain CSS, so they
+      // need neither Sass nor `@carbon/styles`.
+      format: 'esm',
+      plugins: [pluginSass()],
+      source: {
+        entry: {
+          style: './src/styles/index.scss'
+        }
+      },
       output: {
+        // CSS is only emitted for browser targets.
+        target: 'web',
         cleanDistPath: false,
-        filename: {
-          js: '[name].umd.js'
-        },
         minify: true,
         sourceMap: false
-      },
-      syntax: 'es2020',
-      umdName
+      }
     }
   ],
   tools: {
@@ -225,7 +212,9 @@ define.doc({
     ]
   },
   builderConfig: { plugins: [pluginSass()] },
-  globalStyles: path.join(__dirname, 'theme/index.scss'),
+  // The docs site uses the theme from source, so edits show up without a library build.
+  // Published consumers use `pluginFullerene()`, which points at the prebuilt `dist/style.css`.
+  globalStyles: path.join(import.meta.dirname, 'src/styles/index.scss'),
   // Site information settings
   title: packageJson.name,
   description: packageJson.description,
@@ -235,8 +224,8 @@ define.doc({
     {
       lang: 'en',
       label: 'English',
-      title: 'My Site',
-      description: 'My site description'
+      title: 'Fullerene',
+      description: "Logue's Rspress theme, a design based on IBM Carbon"
     }
   ],
   // generate llms.txt

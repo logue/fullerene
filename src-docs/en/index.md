@@ -1,44 +1,29 @@
 ---
-description: Rspress starter homepage with guide, MDX, search, AI, SSG, and theme customization links.
+description: Fullerene, Logue's Rspress theme based on IBM Carbon, applied with one plugin.
 pageType: home
 
 hero:
-  name: My Site
-  text: A cool website!
-  tagline: This is the tagline
+  name: Fullerene
+  text: A design based on IBM Carbon
+  tagline: One plugin, plain CSS, Carbon tokens.
   actions:
     - theme: brand
-      text: Quick Start
-      link: /guide/start/introduction
+      text: Getting started
+      link: /guide/start/getting-started
     - theme: alt
-      text: GitHub
-      link: https://github.com/web-infra-dev/rspress
-  image:
-    src: /rspress-icon.png
-    alt: Logo
+      text: Playground
+      link: /playground
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
-    icon: 🏃🏻‍♀️
-    link: /guide/start/introduction
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
-    icon: 📦
-    link: /guide/use-mdx/components
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+  - title: One line to apply
+    details: Add `pluginFullerene()` to the Rspress plugins. The theme needs no theme directory and no Sass.
+    icon: 🔌
+    link: /guide/start/getting-started
+  - title: Carbon tokens
+    details: The --cds-* tokens of Carbon's white and g100 themes are set on the html element and follow the Rspress dark mode.
     icon: 🎨
-    link: https://rspress.rs/guide/advanced/custom-search
-  - title: AI-friendly
-    details: Generate llms.txt and Markdown files compliant with the llms.txt specification through SSG-MD, making it easier for large language models to understand and use your documentation.
-    icon: 🤖
-    link: https://rspress.rs/guide/basic/ssg-md
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
-    icon: 🌈
-    link: https://rspress.rs/guide/basic/ssg
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
-    icon: 🔥
-    link: https://rspress.rs/guide/basic/custom-theme
+    link: /guide/start/introduction
+  - title: Ready for Web Components
+    details: Custom properties inherit into Shadow DOM, so Web Components can read the same tokens as the page.
+    icon: 🧩
+    link: /guide/start/introduction
 ---

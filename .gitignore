@@ -33,6 +33,7 @@ test-results/
 dist/
 docs/
 storybook-static/
+src-docs/public/demo/
 target/
 
 # Environment

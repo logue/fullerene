@@ -4,82 +4,41 @@
 
 ## 1. 🧾 Meta
 
-- Project:
-- Owner:
-- Updated:
-- Status: `Draft` | `Reviewing` | `Finalized` | `Implemented`
+- Project: `fullerene` (npm, unscoped)
+- Owner: Logue
+- Updated: 2026-11-18
+- Status: `Draft`
 
 ## 2. 💡 Draft Spec
 
-- Background:
-- Goal:
-- Scope :
-- Out of scope:
+- Background: annealer carries its Rspress theme in its own `theme/` directory. The same
+  theme should be shared by other projects (umd-core and later libraries) without copying it.
+- Goal: ship the theme as an Rspress plugin that points at a prebuilt CSS file.
+- Positioning: a design by Logue, based on IBM Carbon. Not Carbon itself.
+- Scope:
+  - Carbon tokens (`--cds-*`) on `<html>`, `white` and `g100` (`html.rp-dark`)
+  - IBM Plex fonts, Twemoji, Carbon type styles
+  - `--cds-*` → `--rp-*` mapping
+- Out of scope (deferred, see PROGRESS.md):
+  - Replacing Rspress components (callouts in Carbon style)
+  - Code blocks rendered with the vue-codemirror6 Web Components (`vue-codemirror6/wc`)
 - Requirements:
-  - [ ]
-  - [ ]
+  - [x] Consumers need neither Sass nor `@carbon/styles`
+  - [x] Only the Carbon modules the theme uses are emitted
+  - [x] Tokens readable from Shadow DOM (set as custom properties on `<html>`)
 
 ## 3. ✅ Decision
 
-- Final spec summary:
-- Decision rationale:
+- Name: `fullerene` (unscoped on npm). A fullerene is made of carbon but has its own
+  structure, like this theme and Carbon. It pairs with annealer's material-science naming.
+- Keep Carbon's token names and prefix (`--cds-*`). A separate naming system would need a
+  mapping table to maintain, and Carbon's own Web Components read the same tokens.
+- Logue's own additions use `--logue-*`, so they never collide with future Carbon tokens.
+- Pin the `@carbon/styles` major version. Carbon has renamed tokens across majors.
+- Distribute prebuilt CSS, not SCSS, to keep consumer dependencies minimal.
+- `$font-families` is configured on `@carbon/styles/scss/type`. It is not a variable of the
+  Carbon config module.
 
 ## 4. 🛠️ Implementation Tasks
 
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
-
-## 5. 📚 Finalization Checklist
-
-- [ ] `PLAN.md` reflects latest agreed spec
-- [ ] `docs/...` updated after finalization
-- [ ] `README.md` updated after finalization
-- [ ] Open questions are cleared
-
-## 6. ❓ Open Questions
-
-- [ ]
-
----
-
-## 7. 🧪 Example (One Issue)
-
-- Project
-- Owner:
-- Updated : 2026-07-31
-- Status: `Reviewing`
-
-### 💡 Draft
-
-- Background: There are setbacks occurring during the initial setup.
-- Goal: The procedure should allow for the first launch within 10 minutes.
-- Scope : README Quick Start and FAQ
-- Out of scope: New features added / UI changes
-- Requirements:
-  - [ ] Please specify the prerequisites (Node, package manager, OS).
-  - [ ] Unified execution commands in the shortest possible steps
-
-### ✅ Decision
-
-- Final spec summary: After reorganizing the Quick Start guide into 3 steps, we will add known errors to the FAQ.
-- Decision rationale: This is the one that requires the least amount of effort and is expected to reduce inquiries.
-
-### 🛠️ Tasks
-
-- [ ] Update README.md Quick Start section.
-- [ ] Update docs related pages.
-- [ ] Add the results of the operational check.
-
-### 📚 Finalization
-
-- [ ] `PLAN.md` reflects latest agreed spec
-- [ ] `docs/...` updated after finalization
-- [ ] `README.md` updated after finalization
-- [ ] Open questions are cleared
-
----
-
-## 🕒 Changelog
-
-- YYYY-MM-DD: Initial draft
+See PROGRESS.md.

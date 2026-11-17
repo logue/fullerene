@@ -4,14 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" rel="stylesheet" />
-    <title>Hello world!</title>
+    <title>Theme tokens</title>
   </head>
   <body>
-    <main class="container">
-      <h1>Hello world!</h1>
-      <input id="input" placeholder="Input" type="number" aria-label="Input" />
-      <input id="output" placeholder="Output" type="number" readonly aria-label="Output" />
+    <main class="demo">
+      <section>
+        <h2 class="cds--type-heading-03">Typography</h2>
+        <p class="cds--type-body-01">
+          The quick brown fox jumps over the lazy dog. いろはにほへと ちりぬるを 天地玄黄 🦊
+        </p>
+        <p class="cds--type-code-01"><code>const answer = 42; // 日本語のコメント</code></p>
+      </section>
+      <section>
+        <h2 class="cds--type-heading-03">Tokens</h2>
+        <p class="cds--type-helper-text-01">
+          Colors come from the <code>--cds-*</code> tokens on <code>&lt;html&gt;</code>, which
+          switch with the <code>rp-dark</code> class.
+        </p>
+        <ul id="tokens" class="tokens"></ul>
+      </section>
     </main>
   </body>
 </html>

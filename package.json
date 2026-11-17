@@ -1,17 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "rstack-library-starter",
-  "version": "1.4.3",
+  "name": "fullerene",
+  "version": "0.1.0",
   "private": true,
-  "description": "Rstack Library Starter Template",
-  "keywords": [],
-  "homepage": "https://github.com/logue/rstack-library-starter",
+  "description": "Fullerene: Logue's Rspress theme, a design based on IBM Carbon.",
+  "keywords": [
+    "rspress",
+    "rspress-plugin",
+    "theme",
+    "carbon"
+  ],
+  "homepage": "https://github.com/logue/fullerene",
   "bugs": {
-    "url": "https://github.com/logue/rstack-library-starter/issues"
+    "url": "https://github.com/logue/fullerene/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:logue/rstack-library-starter.git"
+    "url": "git@github.com:logue/fullerene.git"
   },
   "license": "MIT",
   "author": {
@@ -19,7 +24,9 @@
     "email": "logue@hotmail.co.jp",
     "url": "https://logue.dev/"
   },
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -27,14 +34,13 @@
       "import": "./dist/index.es.js",
       "default": "./dist/index.es.js"
     },
-    "./umd": {
-      "import": "./dist/index.umd.js",
-      "default": "./dist/index.umd.js"
-    },
+    "./style.css": "./dist/style.css",
     "./package.json": "./package.json"
   },
   "files": [
-    "dist/**/*",
+    "dist/index.es.js",
+    "dist/index.d.ts",
+    "dist/style.css",
     "README.md",
     "LICENSE"
   ],
@@ -60,8 +66,8 @@
     "skills:update": "npx skills update",
     "prepare": "rs hooks && pnpm run skills:install"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@carbon/styles": "^1.119.0",
     "@rsbuild/plugin-sass": "^2.0.1",
     "@rsbuild/plugin-type-check": "^1.6.1",
     "@rsdoctor/agent-cli": "^0.1.2",
@@ -82,6 +88,9 @@
     "rstack": "^0.9.2",
     "taze": "^21.3.0",
     "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "@rspress/core": "^2.1.0"
   },
   "packageManager": "pnpm@12.21.0",
   "engines": {

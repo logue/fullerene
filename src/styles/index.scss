@@ -1,0 +1,14 @@
+/*
+  Fullerene — Logue's Rspress theme, a design based on IBM Carbon.
+
+  Layers:
+  1. _carbon.scss  — Carbon configuration, fonts, type styles and --cds-* tokens
+  2. _rspress.scss — --cds-* → Rspress --rp-* variables, plus Rspress fixes
+
+  The emoji font is loaded from a CDN. `@import url(…)` stays a plain CSS import,
+  and Sass hoists it to the top of the output.
+*/
+@use 'carbon';
+@use 'rspress';
+
+@import url('https://cdn.jsdelivr.net/npm/@sableclient/twemoji-font@1.0.4/dist/index.min.css');

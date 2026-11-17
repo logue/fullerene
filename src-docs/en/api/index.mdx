@@ -1,7 +1,34 @@
 ---
-title: API Overview
-description: Overview page for the Rspress starter API section and available reference pages.
-overview: true
+title: API
+description: Reference for pluginFullerene, stylesheetPath, PLUGIN_NAME, and the style.css export.
 ---
 
-This is an API Overview page which outlines all the available APIs.
+# API
+
+## pluginFullerene()
+
+```ts
+function pluginFullerene(): RspressPlugin;
+```
+
+Returns an Rspress plugin that registers the theme stylesheet as a global style.
+
+## stylesheetPath
+
+```ts
+const stylesheetPath: string;
+```
+
+The absolute path of the prebuilt stylesheet (`dist/style.css`). Use it when you need to pass the stylesheet to another tool.
+
+## PLUGIN_NAME
+
+```ts
+const PLUGIN_NAME: 'fullerene';
+```
+
+The name the plugin reports to Rspress.
+
+## fullerene/style.css
+
+The prebuilt stylesheet as a package export. See [Getting started](/guide/start/getting-started#use-the-stylesheet-without-rspress).
