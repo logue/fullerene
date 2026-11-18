@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
-  "include": ["env.d.ts", "src-docs/**/*"],
+  "include": ["env.d.ts", "src-docs/**/*", "theme/**/*"],
   "exclude": ["**/node_modules", "**/.*/"],
   "compilerOptions": {
     "lib": ["DOM", "ES2023"],

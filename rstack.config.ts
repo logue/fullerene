@@ -212,9 +212,7 @@ define.doc({
     ]
   },
   builderConfig: { plugins: [pluginSass()] },
-  // The docs site uses the theme from source, so edits show up without a library build.
-  // Published consumers use `pluginFullerene()`, which points at the prebuilt `dist/style.css`.
-  globalStyles: path.join(import.meta.dirname, 'src/styles/index.scss'),
+  // The theme stylesheet is loaded from source by `theme/index.tsx`.
   // Site information settings
   title: packageJson.name,
   description: packageJson.description,
