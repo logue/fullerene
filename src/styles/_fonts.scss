@@ -1,0 +1,31 @@
+/*
+  Font stacks, shared by the Carbon type styles (_carbon.scss) and the Rspress
+  variables (_rspress.scss), so both layers always use the same fonts.
+
+  The Plex JP / SC families and Twemoji follow each primary family so that
+  Japanese, Chinese and emoji have a font in body text and in code.
+*/
+$sans: (
+  'IBM Plex Sans',
+  'IBM Plex Sans JP',
+  'IBM Plex Sans SC',
+  Twemoji,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  'Helvetica Neue',
+  Arial,
+  sans-serif
+);
+
+$mono: (
+  'IBM Plex Mono',
+  'IBM Plex Sans JP',
+  'IBM Plex Sans SC',
+  Twemoji,
+  Menlo,
+  Monaco,
+  Consolas,
+  'DejaVu Sans Mono',
+  monospace
+);

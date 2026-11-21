@@ -7,7 +7,7 @@ description: Install Fullerene and apply it with pluginFullerene, or use the sty
 ## Install
 
 ```bash
-pnpm add -D @buckminsterfullerene/rspress
+pnpm add -D @c60/rspress
 ```
 
 `@rspress/core` 2.x is a peer dependency.
@@ -18,7 +18,7 @@ Add the plugin to your Rspress configuration:
 
 ```ts title="rspress.config.ts"
 import { defineConfig } from '@rspress/core';
-import { pluginFullerene } from '@buckminsterfullerene/rspress';
+import { pluginFullerene } from '@c60/rspress';
 
 export default defineConfig({
   plugins: [pluginFullerene()]
@@ -34,7 +34,7 @@ The plugin registers the prebuilt `dist/style.css` as a global style. You do not
 The stylesheet is also exported on its own:
 
 ```ts
-import '@buckminsterfullerene/rspress/style.css';
+import '@c60/rspress/style.css';
 ```
 
 The color tokens switch with the `rp-dark` class on the `html` element. Add or remove that class to switch between the light and dark themes.

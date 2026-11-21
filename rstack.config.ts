@@ -199,7 +199,7 @@ define.doc({
   // Directory settings
   root: 'src-docs',
   outDir: 'docs',
-  // The package name (@buckminsterfullerene/rspress) differs from the repository name.
+  // The package name (@c60/rspress) differs from the repository name.
   base: '/fullerene/',
   route: { exclude: ['components/**'] },
   themeConfig: {

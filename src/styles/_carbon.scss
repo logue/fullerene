@@ -5,6 +5,7 @@
   entry) also emits the full component CSS, grid and reset, which a docs site does
   not use.
 */
+@use 'fonts';
 @use '@carbon/styles/scss/config' with (
   $use-per-family-plex: true,
   $use-akamai-cdn: true
@@ -13,27 +14,11 @@
 // Configure it on the first load of the type module.
 @use '@carbon/styles/scss/type' with (
   $font-families: (
-    sans: (
-      'IBM Plex Sans',
-      'IBM Plex Sans JP',
-      'IBM Plex Sans SC',
-      Twemoji,
-      'Helvetica Neue',
-      Arial,
-      sans-serif
-    ),
-    mono: (
-      'IBM Plex Mono',
-      'IBM Plex Sans JP',
-      'IBM Plex Sans SC',
-      Twemoji,
-      Menlo,
-      'DejaVu Sans Mono',
-      monospace
-    )
+    sans: fonts.$sans,
+    mono: fonts.$mono
   )
 );
-@use '@carbon/styles/scss/fonts';
+@use '@carbon/styles/scss/fonts' as carbon-fonts;
 @use '@carbon/styles/scss/theme' as carbon-theme;
 @use '@carbon/styles/scss/themes' as carbon-themes;
 // Component token sets referenced by _rspress.scss. They are not part of the base theme,

@@ -18,7 +18,7 @@ The theme loads only these parts of Carbon. It does not include Carbon's compone
 ## Token naming
 
 - Tokens that come from Carbon keep Carbon's names (`--cds-*`). Carbon's own components, such as `@carbon/web-components`, read the same tokens.
-- Tokens that Logue adds use the `--logue-*` prefix, so they never collide with tokens a later Carbon release may add.
+- Tokens that Fullerene adds use the `--fullerene-*` prefix, so they never collide with tokens a later Carbon release may add.
 
 Carbon has renamed tokens between major versions before. The `@carbon/styles` major version is pinned, and a major upgrade needs a check of the token names.
 

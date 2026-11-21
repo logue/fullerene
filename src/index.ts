@@ -4,14 +4,14 @@ import { fileURLToPath } from 'node:url';
 import type { RspressPlugin } from '@rspress/core';
 
 /** Plugin name reported to Rspress. */
-export const PLUGIN_NAME = '@buckminsterfullerene/rspress';
+export const PLUGIN_NAME = '@c60/rspress';
 
 /**
  * Absolute path of the prebuilt theme stylesheet (`dist/style.css`).
  *
  * The stylesheet is plain CSS, so consumers need neither Sass nor `@carbon/styles`.
  * Pages that are not built with Rspress can use it too, through the
- * `@buckminsterfullerene/rspress/style.css` export.
+ * `@c60/rspress/style.css` export.
  */
 export const stylesheetPath: string = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -24,7 +24,7 @@ export const stylesheetPath: string = path.join(
  * @example
  * ```ts
  * import { defineConfig } from '@rspress/core';
- * import { pluginFullerene } from '@buckminsterfullerene/rspress';
+ * import { pluginFullerene } from '@c60/rspress';
  *
  * export default defineConfig({
  *   plugins: [pluginFullerene()]

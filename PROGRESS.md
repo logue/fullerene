@@ -14,9 +14,9 @@
   - Rspress's Callout styles set the `--rp-container-*` variables on `:root` and `.dark`
     and load after global styles, so a plain `:root` lost. annealer is affected too:
     its containers show Rspress's default colors, not Carbon's.
-- [x] `--font-sans` / `--font-mono` renamed to `--logue-font-sans` / `--logue-font-mono`
+- [x] `--font-sans` / `--font-mono` renamed to `--fullerene-font-sans` / `--fullerene-font-mono`
 - [x] Rspress plugin `pluginFullerene()` with prebuilt `dist/style.css`
-- [x] `@buckminsterfullerene/rspress/style.css` export
+- [x] `@c60/rspress/style.css` export
 - [x] UMD build removed (the package is a Node-side Rspress plugin plus a CSS file)
 - [x] Docs site uses the theme from source; Playground shows typography and tokens
 - [ ] Decide the package and repository name, then set `"private": false`

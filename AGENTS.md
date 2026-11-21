@@ -157,7 +157,7 @@ validate changes with `pnpm run build:docs`.
   Load individual Carbon modules (`@carbon/styles/scss/*`), never the `@carbon/styles`
   entry: the entry also emits all Carbon component CSS.
 - `src/styles/_rspress.scss` — `--cds-*` → Rspress `--rp-*` mapping and Rspress fixes.
-- Logue's own tokens use the `--logue-*` prefix. Do not add custom tokens under `--cds-*`.
+- Fullerene's own tokens use the `--fullerene-*` prefix. Do not add custom tokens under `--cds-*`.
 - Rspress dark mode is the `rp-dark` class on `<html>`.
 
 ### Directory Structure & File Organization

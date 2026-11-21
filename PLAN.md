@@ -4,7 +4,7 @@
 
 ## 1. 🧾 Meta
 
-- Project: `@buckminsterfullerene/rspress` (repository: `logue/fullerene`)
+- Project: `@c60/rspress` (repository: `logue/fullerene`)
 - Owner: Logue
 - Updated: 2026-11-18
 - Status: `Draft`
@@ -29,7 +29,7 @@
 
 ## 3. ✅ Decision
 
-- Name: npm scope `@buckminsterfullerene`, this package `@buckminsterfullerene/rspress`.
+- Name: npm scope `@c60`, this package `@c60/rspress`.
   Buckminsterfullerene (C60) is one specific structure made of carbon, like this design and
   Carbon; it is named after Buckminster Fuller, a designer. `@fullerene` is taken on npm
   (another author's UI library, 2022). The brand name in prose stays "Fullerene".
@@ -40,7 +40,7 @@
 - Scoped packages are restricted by default on npm; `publishConfig.access` is `public`.
 - Keep Carbon's token names and prefix (`--cds-*`). A separate naming system would need a
   mapping table to maintain, and Carbon's own Web Components read the same tokens.
-- Logue's own additions use `--logue-*`, so they never collide with future Carbon tokens.
+- Fullerene's own additions use `--fullerene-*`, so they never collide with future Carbon tokens.
 - Pin the `@carbon/styles` major version. Carbon has renamed tokens across majors.
 - Distribute prebuilt CSS, not SCSS, to keep consumer dependencies minimal.
 - `$font-families` is configured on `@carbon/styles/scss/type`. It is not a variable of the

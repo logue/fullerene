@@ -1,8 +1,11 @@
+@use 'sass:meta';
+@use 'fonts';
+
 /*
   Rspress layer: maps the --cds-* tokens onto the Rspress CSS variables.
   @see https://rspress.rs/ui/vars
 
-  Tokens that are Logue's own additions (not Carbon's) use the --logue-* prefix,
+  Tokens that are Fullerene's own additions (not Carbon's) use the --fullerene-* prefix,
   so they never collide with tokens a future Carbon release may add.
 
   The selector is `html:root`, not `:root`: Rspress component styles (Callout, etc.) set
@@ -10,15 +13,12 @@
   `:root` loses to them. The --cds-* tokens switch with dark mode by themselves.
 */
 html:root {
-  --logue-font-sans:
-    'IBM Plex Sans', 'IBM Plex Sans JP', 'IBM Plex Sans SC', Twemoji, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI';
-  --logue-font-mono: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas';
+  --fullerene-font-sans: #{meta.inspect(fonts.$sans)};
+  --fullerene-font-mono: #{meta.inspect(fonts.$mono)};
 
   /* override rspress css variables */
-  --rp-font-family-base: var(--logue-font-sans), sans-serif;
-  /* The sans stack follows the mono stack so that non-Latin text in code has a font. */
-  --rp-font-family-mono: var(--logue-font-mono), var(--logue-font-sans), monospace;
+  --rp-font-family-base: var(--fullerene-font-sans);
+  --rp-font-family-mono: var(--fullerene-font-mono);
   --rp-radius: 0;
   --rp-radius-small: 0;
   --rp-radius-large: 0;

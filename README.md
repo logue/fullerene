@@ -1,4 +1,4 @@
-# @buckminsterfullerene/rspress
+# @c60/rspress
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-7-%230074c1.svg)](http://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-12-pink.svg)](https://pnpm.io/)
@@ -12,12 +12,12 @@ The name comes from buckminsterfullerene (C60): a molecule made of carbon, with 
 ## Usage
 
 ```bash
-pnpm add -D @buckminsterfullerene/rspress
+pnpm add -D @c60/rspress
 ```
 
 ```ts
 import { defineConfig } from '@rspress/core';
-import { pluginFullerene } from '@buckminsterfullerene/rspress';
+import { pluginFullerene } from '@c60/rspress';
 
 export default defineConfig({
   plugins: [pluginFullerene()]
@@ -25,7 +25,7 @@ export default defineConfig({
 ```
 
 The plugin registers a prebuilt, plain CSS stylesheet. Consumers need neither Sass nor
-`@carbon/styles`. The stylesheet is also available as `@buckminsterfullerene/rspress/style.css`.
+`@carbon/styles`. The stylesheet is also available as `@c60/rspress/style.css`.
 
 ## What the theme contains
 
@@ -35,7 +35,7 @@ The plugin registers a prebuilt, plain CSS stylesheet. Consumers need neither Sa
 - `--cds-*` → Rspress `--rp-*` variable mapping (colors, containers, code blocks, Shiki)
 
 Only these Carbon modules are loaded; Carbon's component CSS, grid and reset are not.
-Logue's own additions use the `--logue-*` prefix.
+Fullerene's own additions use the `--fullerene-*` prefix.
 
 ## Development
 
